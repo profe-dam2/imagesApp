@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.dam.views.Page1Panel">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FormLayout">
+    <constraints>
+      <xy x="20" y="20" width="1132" height="725"/>
+    </constraints>
+    <properties>
+      <maximumSize width="1132" height="725"/>
+      <minimumSize width="1132" height="725"/>
+      <preferredSize width="1132" height="725"/>
+    </properties>
+    <border type="none"/>
+    <children/>
+  </grid>
+</form>

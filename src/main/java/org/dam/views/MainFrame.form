@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.dam.views.MainFrame">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FormLayout">
+    <rowspec value="center:10px:noGrow"/>
+    <rowspec value="top:45px:noGrow"/>
+    <rowspec value="center:725px:grow"/>
+    <rowspec value="top:10px:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <colspec value="fill:14px:noGrow"/>
+    <colspec value="left:11dlu:noGrow"/>
+    <colspec value="fill:1132px:grow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:8px:noGrow"/>
+    <constraints>
+      <xy x="20" y="20" width="1200" height="800"/>
+    </constraints>
+    <properties>
+      <maximumSize width="1200" height="800"/>
+      <minimumSize width="1200" height="800"/>
+      <preferredSize width="1200" height="800"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="e4d5f" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="e94c7" class="javax.swing.JButton" binding="INICIOButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="INICIO"/>
+            </properties>
+          </component>
+          <component id="1e62c" class="javax.swing.JButton" binding="PAGINA1Button" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="PAGINA1"/>
+            </properties>
+          </component>
+          <component id="e84ec" class="javax.swing.JButton" binding="PAGINA2Button" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="PAGINA2"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="28721" binding="contenedorPaneles" layout-manager="CardLayout" hgap="0" vgap="0">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+</form>
