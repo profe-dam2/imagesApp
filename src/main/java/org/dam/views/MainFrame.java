@@ -4,14 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+import static org.dam.controllers.MainFrameController.*;
+
 public class MainFrame extends JFrame implements InterfaceView {
     private JPanel mainPanel;
-    private JButton INICIOButton;
-    private JButton PAGINA1Button;
-    private JButton PAGINA2Button;
+    private JButton bt_init;
+    private JButton bt_page1;
+    private JButton bt_page2;
     private JPanel contenedorPaneles;
     private CardLayout navegador;
     private InitPanel initPanel;
+    private Page1Panel page1Panel;
+    private Page2Panel page2Panel;
 
     public MainFrame() {
         initWindow();
@@ -24,10 +28,13 @@ public class MainFrame extends JFrame implements InterfaceView {
 
         // Instanciar paneles
         initPanel = new InitPanel();
-
+        page1Panel = new Page1Panel();
+        page2Panel = new Page2Panel();
 
         // Añadir los paneles al contenedor de paneles
         contenedorPaneles.add(initPanel, "initPanel");
+        contenedorPaneles.add(page1Panel, "page1Panel");
+        contenedorPaneles.add(page2Panel, "page2Panel");
     }
 
     public void navigate(String panelName){
@@ -55,12 +62,16 @@ public class MainFrame extends JFrame implements InterfaceView {
 
     @Override
     public void setCommands() {
-
+        bt_init.setActionCommand(NAVIGATE_TO_INIT);
+        bt_page1.setActionCommand(NAVIGATE_TO_PAGE1);
+        bt_page2.setActionCommand(NAVIGATE_TO_PAGE2);
     }
 
     @Override
     public void addListener(ActionListener listener) {
-
+        bt_init.addActionListener(listener);
+        bt_page1.addActionListener(listener);
+        bt_page2.addActionListener(listener);
     }
 
     @Override

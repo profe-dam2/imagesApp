@@ -29,19 +29,19 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="e94c7" class="javax.swing.JButton" binding="INICIOButton" default-binding="true">
+          <component id="e94c7" class="javax.swing.JButton" binding="bt_init">
             <constraints/>
             <properties>
               <text value="INICIO"/>
             </properties>
           </component>
-          <component id="1e62c" class="javax.swing.JButton" binding="PAGINA1Button" default-binding="true">
+          <component id="1e62c" class="javax.swing.JButton" binding="bt_page1">
             <constraints/>
             <properties>
               <text value="PAGINA1"/>
             </properties>
           </component>
-          <component id="e84ec" class="javax.swing.JButton" binding="PAGINA2Button" default-binding="true">
+          <component id="e84ec" class="javax.swing.JButton" binding="bt_page2">
             <constraints/>
             <properties>
               <text value="PAGINA2"/>
