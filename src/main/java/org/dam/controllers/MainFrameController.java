@@ -21,6 +21,7 @@ public class MainFrameController implements ActionListener {
         mainFrame.navigate(panelName);
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();

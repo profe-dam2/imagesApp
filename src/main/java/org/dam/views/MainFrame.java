@@ -20,6 +20,11 @@ public class MainFrame extends JFrame implements InterfaceView {
     public MainFrame() {
         initWindow();
         addPanels();
+
+    }
+
+    public Page1Panel getPage1Panel() {
+        return page1Panel;
     }
 
     private void addPanels(){
@@ -28,8 +33,13 @@ public class MainFrame extends JFrame implements InterfaceView {
 
         // Instanciar paneles
         initPanel = new InitPanel();
+        initPanel.setBackgroundImage("/gatos.png");
+
         page1Panel = new Page1Panel();
+        page1Panel.setBackgroundImage("/perrito.jpg");
+
         page2Panel = new Page2Panel();
+        page2Panel.setBackgroundImage("/toledo.jpeg");
 
         // Añadir los paneles al contenedor de paneles
         contenedorPaneles.add(initPanel, "initPanel");

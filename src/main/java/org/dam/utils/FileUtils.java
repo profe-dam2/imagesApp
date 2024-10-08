@@ -1,0 +1,41 @@
+package org.dam.utils;
+
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
+
+public class FileUtils {
+
+    // Método estático para abrir un selector de archivos y permitir al usuario seleccionar una imagen.
+    public static String seleccionarRutaImagen() {
+        // Crea una instancia de JFileChooser para permitir la selección de archivos.
+        JFileChooser fileChooser = new JFileChooser();
+
+        // Establece el título del diálogo de selección de archivos.
+        fileChooser.setDialogTitle("Seleccionar una imagen");
+
+        // Filtro para solo mostrar archivos de imagen en el diálogo.
+        // Se permite la selección de imágenes con extensiones específicas: jpg, jpeg, png, gif, bmp.
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Imágenes", "jpg", "jpeg", "png", "gif", "bmp");
+        fileChooser.setFileFilter(filter);
+
+        // Muestra el diálogo para seleccionar un archivo y espera la acción del usuario.
+        int userSelection = fileChooser.showOpenDialog(null);
+
+        // Verifica si el usuario aprobó la selección de un archivo.
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            // Obtiene el archivo seleccionado por el usuario.
+            File archivoSeleccionado = fileChooser.getSelectedFile();
+
+            // Obtiene la ruta absoluta del archivo seleccionado.
+            String rutaImagen = archivoSeleccionado.getAbsolutePath();
+
+            // Retorna la ruta de la imagen seleccionada.
+            return rutaImagen;
+        }
+
+        // Si no se seleccionó un archivo, retorna null.
+        return null;
+    }
+
+}
