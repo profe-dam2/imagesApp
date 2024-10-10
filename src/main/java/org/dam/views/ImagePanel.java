@@ -13,10 +13,20 @@ public class ImagePanel extends JPanel {
     private JButton bt_delete;
     private JLabel lb_image;
 
+    private String rutaImagenOriginal;
+
     public ImagePanel() {
         add(mainPanel);
         setCommands();
         setOpaque(false);
+    }
+
+    public void setRutaImagenOriginal(String rutaImagenOriginal) {
+        this.rutaImagenOriginal = rutaImagenOriginal;
+    }
+
+    public String getRutaImagenOriginal() {
+        return rutaImagenOriginal;
     }
 
     public void setBackgroundImage(String rutaImagen) {

@@ -27,6 +27,10 @@ public class MainFrame extends JFrame implements InterfaceView {
         return page1Panel;
     }
 
+    public Page2Panel getPage2Panel() {
+        return page2Panel;
+    }
+
     private void addPanels(){
         // Obtener layout para navegar
         navegador = (CardLayout) contenedorPaneles.getLayout();

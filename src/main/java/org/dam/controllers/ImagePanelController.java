@@ -33,6 +33,7 @@ public class ImagePanelController implements ActionListener {
         String imagePath = FileUtils.seleccionarRutaImagen();
         if(imagePath != null) {
             imagePanel.setBackgroundImage(imagePath);
+            imagePanel.setRutaImagenOriginal(imagePath);
         }
     }
 
