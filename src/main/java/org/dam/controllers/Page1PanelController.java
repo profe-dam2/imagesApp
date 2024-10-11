@@ -22,13 +22,23 @@ public class Page1PanelController implements ActionListener {
     private void handleCreateProduct() {
         // Primero guardar la imagen
         String rutaImageOriginal = panel.getImagePanel().getRutaImagenOriginal();
-        String rutaImagen = FileUtils.guardarImagen(rutaImageOriginal);
+        String rutaImagen = null;
+
+        if(!rutaImageOriginal.equals("src/images/default.jpg")) {
+            // Si la ruta no es default, guardarmos la imagen
+            rutaImagen = FileUtils.guardarImagen(rutaImageOriginal);
+        }else{
+            rutaImagen = rutaImageOriginal;
+        }
+
+        //String rutaImagen = FileUtils.guardarImagen(rutaImageOriginal);
         if(rutaImagen != null) {
-            ProductModel productModel = new ProductModel();
-            productModel.setImagenPath(rutaImagen);
-            productModel.setPrecio(341);
-            productModel.setCodigo("3124");
-            productModel.setDescripcion("El mejor producto jamas creado");
+            ProductModel productModel = panel.getProduct();
+//            ProductModel productModel = new ProductModel();
+//            productModel.setImagenPath(rutaImagen);
+//            productModel.setPrecio(341);
+//            productModel.setCodigo("314");
+//            productModel.setDescripcion("El mejor producto jamas creado");
             boolean okCrear = XMLManager.createProduct(productModel);
             if(okCrear) {
                 JOptionPane.showMessageDialog(panel, "El producto se ha guardado correctamente");

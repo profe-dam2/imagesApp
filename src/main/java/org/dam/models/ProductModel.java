@@ -6,6 +6,12 @@ public class ProductModel {
     private double precio;
     private String imagenPath;
 
+    public ProductModel(String codigo, String descripcion, double precio) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
+    }
+
     public ProductModel(String codigo, String descripcion, double precio, String imagenPath) {
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -14,6 +20,7 @@ public class ProductModel {
     }
 
     public ProductModel() {
+        this.imagenPath = "/default.jpg";
     }
 
     public String getCodigo() {

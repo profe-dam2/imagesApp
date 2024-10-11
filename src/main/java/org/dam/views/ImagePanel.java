@@ -19,6 +19,7 @@ public class ImagePanel extends JPanel {
         add(mainPanel);
         setCommands();
         setOpaque(false);
+        setRutaImagenOriginal("src/images/default.jpg");
     }
 
     public void setRutaImagenOriginal(String rutaImagenOriginal) {
