@@ -4,11 +4,14 @@ import org.dam.models.ProductModel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+
+import static org.dam.controllers.ProductPanelController.EDIT_PRODUCT;
 
 public class ProductPanel extends JPanel {
     private JPanel mainPanel;
-    private JButton EDITARButton;
-    private JButton BORRARButton;
+    private JButton bt_edit;
+    private JButton bt_delete;
     private JPanel imagePreviewPanel;
     private JLabel lb_codigo;
     private JLabel lb_descripcion;
@@ -17,6 +20,7 @@ public class ProductPanel extends JPanel {
 
     public ProductPanel() {
         add(mainPanel);
+        setCommands();
     }
 
     public void setProductData(ProductModel product) {
@@ -36,5 +40,15 @@ public class ProductPanel extends JPanel {
         // Asigna la imagen escalada a un nuevo ImageIcon y lo establece en el componente imageLabel.
         lb_image.setIcon(new ImageIcon(imagenEscalada));
 
+    }
+
+    // Llamar desde el constructor!!
+    private void setCommands(){
+        bt_edit.setActionCommand(EDIT_PRODUCT);
+    }
+
+    // Llamar desde el main!!!
+    public void addListeners(ActionListener listener){
+        bt_edit.addActionListener(listener);
     }
 }

@@ -1,5 +1,6 @@
 package org.dam.views;
 
+import org.dam.controllers.ProductPanelController;
 import org.dam.models.ProductModel;
 
 import javax.swing.*;
@@ -34,7 +35,10 @@ public class Page2Panel extends JPanel {
 
     public void setProductPanels(ArrayList<ProductModel> listaProductos){
         for(ProductModel producto : listaProductos){
+
             ProductPanel productPanel = new ProductPanel();
+            ProductPanelController productPanelController =
+                    new ProductPanelController(productPanel,frame);
             productPanel.setProductData(producto);
             productListPanel.add(productPanel);
         }

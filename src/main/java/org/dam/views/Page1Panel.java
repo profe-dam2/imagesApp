@@ -132,4 +132,21 @@ public class Page1Panel extends JPanel {
     public void addListener(ActionListener listener){
         bt_save.addActionListener(listener);
     }
+
+    public void showMessageCode(){
+        tx_code.setBackground(Color.RED);
+    }
+
+    public void setDefaultValues(){
+        tx_code.setText("");
+        tx_decripcion.setText("");
+        tx_price.setText("500");
+        sl_price.setValue(500);
+
+        tx_code.setBackground(Color.LIGHT_GRAY);
+
+        // Establecer imagen por defecto
+        imagePanel.setBackgroundImage("src/images/default.jpg");
+    }
+
 }

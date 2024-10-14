@@ -20,9 +20,25 @@ public class Page1PanelController implements ActionListener {
     }
 
     private void handleCreateProduct() {
-        // Primero guardar la imagen
+        // PASO 1. Obtener el producto del panel
+        ProductModel productModel = panel.getProduct();
+
+        // PASO 2. Comprobar que el codigo no exista. Si existe salimos del metodo
+        try {
+            ProductModel p = XMLManager.getProductByCode(productModel.getCodigo());
+            if(p != null) {
+                JOptionPane.showMessageDialog(null, "El código de producto ya existe");
+                panel.showMessageCode();
+                return;
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+        // PASO 3. Guardar la imagen y obtener la ruta absoluta de la imagen
         String rutaImageOriginal = panel.getImagePanel().getRutaImagenOriginal();
-        String rutaImagen = null;
+        String rutaImagen;
 
         if(!rutaImageOriginal.equals("src/images/default.jpg")) {
             // Si la ruta no es default, guardarmos la imagen
@@ -31,17 +47,19 @@ public class Page1PanelController implements ActionListener {
             rutaImagen = rutaImageOriginal;
         }
 
-        //String rutaImagen = FileUtils.guardarImagen(rutaImageOriginal);
         if(rutaImagen != null) {
-            ProductModel productModel = panel.getProduct();
-//            ProductModel productModel = new ProductModel();
-//            productModel.setImagenPath(rutaImagen);
-//            productModel.setPrecio(341);
-//            productModel.setCodigo("314");
-//            productModel.setDescripcion("El mejor producto jamas creado");
-            boolean okCrear = XMLManager.createProduct(productModel);
-            if(okCrear) {
-                JOptionPane.showMessageDialog(panel, "El producto se ha guardado correctamente");
+            // Establecer ruta imagen al producto
+            productModel.setImagenPath(rutaImagen);
+
+            // PASO 4. Crear producto
+            try {
+                boolean okCrear = XMLManager.createProduct(productModel);
+                if(okCrear) {
+                    JOptionPane.showMessageDialog(null, "El producto se ha guardado correctamente");
+                    panel.setDefaultValues();
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
         System.out.println("El archivo se guardo: " + rutaImagen);

@@ -1,14 +1,12 @@
 package org.dam;
 
 import com.formdev.flatlaf.FlatDarculaLaf;
-import org.dam.controllers.ImagePanelController;
-import org.dam.controllers.MainFrameController;
-import org.dam.controllers.Page1PanelController;
-import org.dam.controllers.Page2PanelController;
+import org.dam.controllers.*;
 import org.dam.models.ProductModel;
 import org.dam.utils.FileUtils;
 import org.dam.views.ImagePanel;
 import org.dam.views.MainFrame;
+import org.dam.views.ProductPanel;
 import org.dam.xml.XMLManager;
 
 import javax.swing.*;
@@ -70,11 +68,13 @@ public class App
         Page1PanelController page1PanelController = new Page1PanelController(frame.getPage1Panel());
         Page2PanelController page2PanelController = new Page2PanelController(frame.getPage2Panel());
 
+
         // Listeners
         frame.addListener(mainFrameController);
         imagePanel.addListener(imagePanelController);
         frame.getPage1Panel().addListener(page1PanelController);
         frame.getPage2Panel().addListeners(page2PanelController);
+
 
         frame.showWindow();
     }
