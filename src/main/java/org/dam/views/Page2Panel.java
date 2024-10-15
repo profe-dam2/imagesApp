@@ -13,8 +13,10 @@ public class Page2Panel extends JPanel {
     private JPanel queriesPanel;
     private JPanel productListPanel;
     private Image backgroundImage;
+    private MainFrame mainFrame;
 
-    public Page2Panel() {
+    public Page2Panel(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
         add(mainPanel);
         mainPanel.setOpaque(false);
         setCommands();
@@ -37,9 +39,13 @@ public class Page2Panel extends JPanel {
         for(ProductModel producto : listaProductos){
 
             ProductPanel productPanel = new ProductPanel();
+
             ProductPanelController productPanelController =
-                    new ProductPanelController(productPanel,frame);
+                    new ProductPanelController(productPanel,mainFrame);
+            productPanel.addListeners(productPanelController);
+
             productPanel.setProductData(producto);
+
             productListPanel.add(productPanel);
         }
     }

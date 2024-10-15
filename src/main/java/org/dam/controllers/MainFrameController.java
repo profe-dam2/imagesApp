@@ -30,6 +30,8 @@ public class MainFrameController implements ActionListener {
                 handleNavigateTo("initPanel");
                 break;
             case NAVIGATE_TO_PAGE1:
+                mainFrame.getPage1Panel().setCreateMode(); // Establecer modo crear
+                mainFrame.getPage1Panel().setDefaultValues(); // Borrar datos
                 handleNavigateTo("page1Panel");
                 break;
             case NAVIGATE_TO_PAGE2:

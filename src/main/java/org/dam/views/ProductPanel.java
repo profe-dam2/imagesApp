@@ -17,13 +17,18 @@ public class ProductPanel extends JPanel {
     private JLabel lb_descripcion;
     private JLabel lb_precio;
     private JLabel lb_image;
-
+    private ProductModel productModel;
     public ProductPanel() {
         add(mainPanel);
         setCommands();
     }
 
+    public ProductModel getProductModel() {
+        return productModel;
+    }
+
     public void setProductData(ProductModel product) {
+        this.productModel = product;
         lb_codigo.setText(product.getCodigo());
         lb_descripcion.setText(product.getDescripcion());
         lb_precio.setText(String.valueOf(product.getPrecio()));

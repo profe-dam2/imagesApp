@@ -22,7 +22,7 @@
     <border type="none"/>
     <children>
       <grid id="9709d" layout-manager="FormLayout">
-        <rowspec value="center:251px:noGrow"/>
+        <rowspec value="center:293px:noGrow"/>
         <rowspec value="top:30dlu:noGrow"/>
         <rowspec value="center:44px:noGrow"/>
         <rowspec value="top:21dlu:noGrow"/>

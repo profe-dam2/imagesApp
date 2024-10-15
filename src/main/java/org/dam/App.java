@@ -65,7 +65,7 @@ public class App
         // Controllers
         MainFrameController mainFrameController = new MainFrameController(frame);
         ImagePanelController imagePanelController = new ImagePanelController(imagePanel);
-        Page1PanelController page1PanelController = new Page1PanelController(frame.getPage1Panel());
+        Page1PanelController page1PanelController = new Page1PanelController(frame);
         Page2PanelController page2PanelController = new Page2PanelController(frame.getPage2Panel());
 
 

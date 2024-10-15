@@ -66,6 +66,32 @@ public class XMLManager {
         return null;
     }
 
+    public static boolean updateProduct(ProductModel product) throws Exception {
+        Document document = XMLService.loadOrCreateXML(); // Cargar o crear el documento XML
+        if(document != null) {
+            try{
+                NodeList nodeList = document.getElementsByTagName("producto");
+                for(int i = 0; i < nodeList.getLength(); i++) {
+                    Element element = (Element) nodeList.item(i);
+                    String codigo = element.getAttribute("codigo");
+                    if(codigo.equals(product.getCodigo())) {
+                        element.setAttribute("descripcion", product.getDescripcion());
+                        element.setAttribute("precio", String.valueOf(product.getPrecio()));
+                        element.setAttribute("imagenPath", product.getImagenPath());
+                    }
+                }
+                return XMLService.saveXML(document);
+
+            }catch (Exception e) {
+                System.out.println("Error al obtener producto");
+                throw new Exception("1, Error al obtener producto");
+            }
+        }else{
+            throw new Exception("2, Error al obtener el documento");
+        }
+    }
+
+
 
     public static boolean createProduct(ProductModel product) {
         Document document = XMLService.loadOrCreateXML(); // Cargar o crear el documento XML

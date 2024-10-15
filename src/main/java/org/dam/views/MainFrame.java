@@ -42,7 +42,7 @@ public class MainFrame extends JFrame implements InterfaceView {
         page1Panel = new Page1Panel();
         page1Panel.setBackgroundImage("/perrito.jpg");
 
-        page2Panel = new Page2Panel();
+        page2Panel = new Page2Panel(this);
         page2Panel.setBackgroundImage("/toledo.jpeg");
 
         // Añadir los paneles al contenedor de paneles

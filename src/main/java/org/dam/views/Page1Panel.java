@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import static org.dam.controllers.Page1PanelController.CREATE_PRODUCT;
+import static org.dam.controllers.Page1PanelController.UPDATE_PRODUCT;
 
 public class Page1Panel extends JPanel {
     private JPanel mainPanel;
@@ -73,6 +74,13 @@ public class Page1Panel extends JPanel {
 
             }
         });
+    }
+
+    public void setProductData(ProductModel productModel){
+        tx_code.setText(productModel.getCodigo());
+        tx_decripcion.setText(productModel.getDescripcion());
+        sl_price.setValue((int) productModel.getPrecio());
+        imagePanel.setBackgroundImage(productModel.getImagenPath());
     }
 
     private void setImagePanel() {
@@ -149,4 +157,15 @@ public class Page1Panel extends JPanel {
         imagePanel.setBackgroundImage("src/images/default.jpg");
     }
 
+    public void setCreateMode() {
+        tx_code.setEnabled(true);
+        bt_save.setText("CREAR");
+        bt_save.setActionCommand(CREATE_PRODUCT);
+    }
+
+    public void setEditMode() {
+        tx_code.setEnabled(false);
+        bt_save.setText("EDITAR");
+        bt_save.setActionCommand(UPDATE_PRODUCT);
+    }
 }
